@@ -63,16 +63,20 @@ function AppViewModel() {
           });
           self.markers.push(self.marker);
           self.marker.addListener('click', function() {
+              self.toggleBounce(this);
 			  self.markerClicked(this);
   		  });
-          self.marker.addListener('mouseover', function() {
-			  this.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-  		  });
-  		  self.marker.addListener('mouseout', function() {
-			  this.setIcon('http://mt.googleapis.com/vt/icon/name=icons/spotlight/spotlight-poi.png');
-  		  });
+
   		  
       };
+
+      self.toggleBounce = function(m){
+      	  m.setAnimation(google.maps.Animation.BOUNCE);
+      	  setTimeout(function ()
+          {
+            m.setAnimation(null);
+          }, 750); 
+      }
 
     self.infowindow = new google.maps.InfoWindow({
     			content: "title"
