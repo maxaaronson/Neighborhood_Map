@@ -1,0 +1,16 @@
+html, body { height: 100%; margin: 0; padding: 0; }
+
+.left { float: left; }
+
+
+#map { height: 70%; width: 70%;}
+#panel {height: 70%; width: 29%;}
+
+.blue:hover {
+	color: blue;
+}
+
+#infobox {
+	background-color: lightgray;
+	z-index: -1;
+}

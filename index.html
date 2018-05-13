@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="styles.css"  rel="stylesheet" type="text/css"/>
+		<script
+    		src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js">
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+	</head>
+	<body>
+		<div id="panel" class="left">
+			<input type="search" placeHolder="search" data-bind="value: keyword">
+			<button data-bind="click: search">Search</button>
+			<table>
+			    <tbody data-bind="foreach: locations_ko">
+			        <tr>
+			            <td data-bind="text: title, click: $parent.clicked" class="blue"></td>
+
+			        </tr>    
+			    </tbody>
+			</table><br>
+			<div id="infobox" data-bind="html: infobox"></div>
+			<a data-bind="attr: { href: wikilink}, text: wikitext "></a>
+
+		</div>
+		<div id="map" class="left"></div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6IaIBtfRwVVYsajABndmeNUALOqOLgGQ&v=3&callback=initMap" onerror="googleError()">
+	</script>
+	<script
+	        src="ViewModel.js">
+	</script>
+
+ 
+
+
+	</body>
+
+</html>
